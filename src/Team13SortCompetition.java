@@ -57,7 +57,7 @@ public class Team13SortCompetition extends SortCompetition
     {
         int i = from;
         int j = mid + 1;
-        int k = to;
+        int k = from;
         while (i <= mid && j <= to)
         {
             if(findMedian(arr2,i) < findMedian(arr2,j))
@@ -277,8 +277,13 @@ public class Team13SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr)
     {
-        int place = 0;
-        return place;
+        for(int i = 0; i<arr.length;i++)
+        {
+            mergeSort(arr[i]);
+        }
+        doubleMergeSort(arr);
+        int median = (((arr[500][499]+arr[500][500]/2)+(arr[499][499]+arr[499][500])/2))/2;
+        return median;
     }
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
